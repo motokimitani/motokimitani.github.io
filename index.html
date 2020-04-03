@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
 </head>
@@ -11,40 +12,96 @@
     <div class="container">
       <div class="header-right"> 
         <ul class="nav-ul">
-          <li><a href="#top">Top</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#page-top" class="nav-li">Top</a></li>
+          <li><a href="#page-about" class="nav-li">About</a></li>
+          <li><a href="#page-skills" class="nav-li">Skills</a></li>
+          <li><a href="#page-contact" class="nav-li">Contact</a></li>
         </ul>
       </div>
     </div>
   </header>
-  <section class="top">
+  <section class="top" id="page-top">
       <div class="container">
-        <h1 class="top-h1">Portfolio</h1>
+        <div class="top-name">
+        <h1 class="top-h1">Motoki Mitani</h1>
+        <h2 class="top-h2">My Portfolio</h2>
+      </div>
         <div class="btn-wrapper">
-        <a href="#contact" class="btn profile">CONTACT ME</a>
+        <a href="#page-contact" class="btn profile">CONTACT ME</a>
         </div>
       </div> 
   </section>
-  <section class="about">
+  <section class="about" id="page-about">
     <div class="container">
       <div class="heading-about">
         <h1 class="section-title">ABOUT</h1>
+        <p class="heading-text">プロフィール</p>
       </div>
       <div class="about-image">
       <img src="my-image.jpg" alt="写真" class="icon-img">
       <div class="about-text">
-      <p>Mitani Motoki / 三谷 元紀</p>
+      <p>Motoki Mitani / 三谷 元紀</p>
       <p>1984年生まれ</p>
+      <p>製造メーカーに勤務し、海外製品の調達や貿易業務を担当。</p>
+      <p>個人では、オンラインスクールでプログラミングを習得、Web制作を中心にした案件を承っております。</p>
+      <p>迅速なレスポンスと丁寧な仕事を心掛け、お客様に満足いただけるよう日々学習し、スキル向上に取り組んでおります。</p>
       </div>
+        <!-- <div class="btn-wrapper2">
+        <a href="#skills" class="btn skills">my skills</a>
+        </div> -->
       </div>
     </div>
   </section>
-<section class="skills">
+<section class="skills" id="page-skills">
 <div class="container">
 <div class="heading-skills">
         <h1 class="section-title">SKILLS</h1>
+        <p class="heading-text">所有スキル</p>
+      </div>
+      <div class="skills-wrapper">
+        <div class="skills-icon">
+          <i class="fab fa-html5"><p class="skills-title">HTML</p></i>
+          <p class="skills-text">LP制作・コーディング代行など対応可能。ヒアリングを基に目的にあった実装、Web制作をおこないます。パソコン・タブレット・スマホ閲覧時のレスポンシブ化にも対応可能です。</p>
+        </div>
+        <div class="skills-icon">
+          <i class="fab fa-css3-alt"><p class="skills-title">CSS</p></i>
+          <p class="skills-text">LP制作・コーディング代行など対応可能。ヒアリングを基に目的にあった実装、Web制作をおこないます。パソコン・タブレット・スマホ閲覧時のレスポンシブ化にも対応可能です。</p>
+        </div>
+        <div class="skills-icon">
+          <i class="fab fab fa-js-square"><p class="skills-title">JavaScript</p></i>
+          <p class="skills-text">Webページに動的な実装を施します。ホームページに動きを付けることで、ユーザーの離脱率を防ぎます。パソコン・タブレット・スマホ閲覧時のレスポンシブ化にも対応可能です。</p>
+        </div>
+        <div class="skills-icon">
+          <i class="far fa-comment"><p class="skills-title">English</p></i>
+          <p class="skills-text">英語を使用した案件にも対応可能。業務レベルで通訳や資料翻訳、海外業者との交渉などの経験があります。</p>
+        </div>
       </div>
 </div>
-<section>
+</section>
+<section class="contact" id="page-contact">
+  <div class="container">
+    <div class="heading-contact">
+      <h1 class="section-title">CONTACT</h1>
+      <p class="heading-text">お問い合わせ</p>
+    </div>
+    <p class="contact-text">制作のご依頼・ご相談は メールまたはツイッターDMでご連絡ください。</p>
+      <ul class="contact-icons">
+        <a href="#" class="btn-circle-flat envelope">
+          <i class="far fa-envelope"></i>
+        </a>
+        <a href="#" class="btn-circle-flat twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="btn-circle-flat facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </ul>
+    </div>
+</section>
+<footer>
+<div class="container">
+  <p>Copyright (c) 2020 Motoki Mitani. All Right Reserved.</p>
+</div>
+</footer>
+</body>
+</html>
