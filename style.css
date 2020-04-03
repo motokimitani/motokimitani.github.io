@@ -17,19 +17,27 @@ body {
 
 .top {
   padding:150px 0 100px 0;
-  background-image:url("../images/pic26.jpg");
+  background-image:url("../images/top-pic02.jpg");
   background-size:cover;
   text-align:center;
   width:100%;
+  height:400px;
   color:rgb(133, 122, 111);
+  background-position:center bottom; 
+                          /* 画像の繰り返しを指定  */              
+}
+
+.top-name {
+  padding:60px 0px 40px 0px;
 }
 
 .top-h1 {
 letter-spacing: 3px;
 margin:0px;
-padding:0px;
 font-size:50px;
 font-weight:900;
+color:#fff;
+text-shadow: 0px 0px 2px #000, 2px 2px 3px #000;
 }
 
 .top-h2 {
@@ -37,6 +45,12 @@ font-weight:900;
   padding:0px;
   text-align:center;
   font-weight:800;
+  color:#3B240B;
+  /* font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; */
+  font-weight:bold;
+  color:#fff;
+text-shadow: 0px 0px 2px #000, 2px 2px 3px #000;
+  letter-spacing: 2px;
 }
 
 header {
@@ -89,19 +103,18 @@ a {
   margin:50px 0px 30px 0px;
 }
 
-/* .btn-wrapper2 {
-  margin:0px;
-  text-align:center;
-  padding:30px 0px;
-} */
 
 .btn {
   padding:10px 30px;
-  color:white;
+  color:#3B240B;
   font-weight:bold;
   display:inline-block;
   border-radius:5px;
   cursor:pointer;
+}
+
+.nav-li:hover{
+  color:#FAAC58;
 }
 
 .profile:hover{
@@ -112,13 +125,6 @@ a {
   background-color:#FF8000;
 }
 
-/* .skills:hover{
-  background-color:#6E6E6E;
-}
-
-.skills {
-  background-color:#2E2E2E;
-} */
 
 .icon-img {
   border-radius:50%;
@@ -132,28 +138,140 @@ a {
   width:50%;
   display:block;
   font-size:20px;
-  font-weight:bold;
+  font-weight:normal;
   line-height: 1.5;
+  padding:20px;
 }
 
 .about {
   background-color:#F2F2F2;
   height:650px;
+  padding: 100px 0;
 }
 
 .heading-about {
-  padding-top:50px;
+  padding-top:30px;
   padding-bottom:30px;
   text-align:center;
 }
 
 .heading-skills {
-  padding-top:50px;
+  padding-top:30px;
   padding-bottom:30px;
+  text-align:center;
+}
+
+.heading-contact {
+  padding-top:30px;
+  padding-bottom:10px;
   text-align:center;
 }
 
 .skills {
   background-color:#A9D0F5;
-  height:650px;
+  height:600px;
+  padding: 100px 0;
+}
+
+.fa-html5 {
+ font-size:8em;
+}
+
+.fa-css3-alt {
+  font-size:8em;
+ }
+
+ .fa-js-square {
+   font-size:8em;
+ }
+
+ .fa-comment {
+   font-size:8em;
+ }
+
+.skills-title {
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+  margin:0;
+}
+
+.skills-wrapper {
+  display:flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+  width:100%;
+}
+
+.skills-text {
+  text-align:justify;
+  margin-top:20px;
+}
+
+.skills-icon {
+  text-align: center;
+  width:20%;
+}
+
+.contact {
+  padding: 110px 0;
+  background-color:#D8D8D8;
+}
+.contact-text {
+text-align: center;
+font-weight:bold;
+}
+
+.heading-text {
+  margin:5px 0px;
+  font-weight:normal;
+  font-size:18px;
+}
+
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: #3B240B;
+  color: #FFF;
+  width: 100px;
+  height: 100px;
+  line-height: 115px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+  margin:0px 30px;
+}
+
+.btn-circle-flat:hover {
+  background: #FF8000;
+}
+
+.fa-envelope {
+  font-size:2.5em;
+ }
+
+.fa-twitter {
+  font-size:2.5em;
+}
+
+.fa-facebook-f {
+  font-size:2.5em;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  margin:40px 0px;
+  padding:0px;
+}
+
+footer {
+  background-color:#222222;
+  padding:20px 20px;
+  text-align:center;
+}
+
+footer p {
+  color :#ffffff;
 }
