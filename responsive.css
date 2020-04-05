@@ -84,7 +84,6 @@ header li {
   width:50%;
   height:50%;
   padding:30px;
-  margin-left: 150px;
   margin:0px;
   display:inline-block;
 }
@@ -115,5 +114,15 @@ header li {
 .header-right {
   float:right;
 }
+  
+  .icon-img {
+  border-radius:50%;
+  width:50%;
+  height:50%;
+  padding:30px;
+  margin:0px;
+  display:inline-block;
+}
+  
   }
   
