@@ -1,0 +1,121 @@
+@media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+  .skills-icon {
+    width:100%;
+    margin-bottom:30px;
+     padding: 0px 30px;
+     text-align:center;
+     display:block;
+  }
+
+  .skills-text {
+    display:inline-block;
+    width:80%;
+  }
+
+  .top-h1 {
+    font-size: 50px;
+  }
+  .top-h2 {
+    font-size:25px;
+  }
+  .icon-img {
+    border-radius:50%;
+    width:80%;
+    height:80%;
+    padding:30px;
+    display: inline-block;
+    /* margin: 0 auto; */
+    margin-bottom:30px;
+  }
+
+  .about-text {
+    width:80%;
+    margin:0px 50px;
+  }
+  .about {
+    padding-bottom: 200px;
+    height:auto;
+  }
+
+.contact-text {
+  display:inline-block;
+  text-align:center;
+  margin:20px 50px;
+}
+
+header li {
+  padding:0px 10px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.btn-circle-flat {
+  margin:0px 15px;
+}
+.about-image {
+  text-align:center;
+ width:100%;
+ display:block;
+}
+
+.heading-about {
+  padding-top:30px;
+  padding-bottom:20px;
+  text-align:center;
+}
+  }
+     
+  @media only screen and (min-width:640px) and (max-width:1023px) {
+  /*tablet用のcssを記述*/
+  .skills-icon {
+    width:50%;
+    margin-bottom:50px;
+  }
+  .top-h1 {
+    font-size: 50px;
+  }
+  .top-h2 {
+    font-size:25px;
+  }
+
+  
+.icon-img {
+  border-radius:50%;
+  width:50%;
+  height:50%;
+  padding:30px;
+  margin-left: 150px;
+  margin:0px;
+  min-width:50%;
+  display:inline-block;
+}
+
+.about-image {
+  text-align:center;
+ width:100%;
+ display:block;
+}
+
+
+.about-text {
+  display:inline-block;
+  width:40%;
+}
+.header-right {
+  float:right;
+}
+
+  }
+
+@media screen and (min-width:1024px) {
+  /*pc用のcssを記述*/
+  .about-text {
+    width: 40%; 
+}
+
+.header-right {
+  float:right;
+}
+  }
+  
