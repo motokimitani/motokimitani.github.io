@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+} 
+
 html {
   margin:0;
   padding:0;
@@ -10,7 +14,8 @@ body {
 }
 
 .container {
-  width:960px;
+  max-width:1170px;
+  width:100%;
   margin:0 auto;
   padding: 0 15px;
 }
@@ -21,20 +26,23 @@ body {
   background-size:cover;
   text-align:center;
   width:100%;
-  height:400px;
-  color:rgb(133, 122, 111);
+  height:600px;
+  background-repeat: no-repeat;
+   
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  /* background-attachment: fixed; */
   background-position:center bottom; 
-                          /* 画像の繰り返しを指定  */              
+
 }
 
 .top-name {
-  padding:60px 0px 40px 0px;
+  padding:15px 0px 30px 0px;
 }
 
 .top-h1 {
 letter-spacing: 3px;
 margin:0px;
-font-size:50px;
+font-size:60px;
 font-weight:900;
 color:#fff;
 text-shadow: 0px 0px 2px #000, 2px 2px 3px #000;
@@ -46,11 +54,11 @@ text-shadow: 0px 0px 2px #000, 2px 2px 3px #000;
   text-align:center;
   font-weight:800;
   color:#3B240B;
-  /* font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif; */
   font-weight:bold;
   color:#fff;
 text-shadow: 0px 0px 2px #000, 2px 2px 3px #000;
   letter-spacing: 2px;
+  font-size:30px;
 }
 
 header {
@@ -62,9 +70,7 @@ header {
   background-color:#3B240B;
 }
 
-.header-right {
-  float:right;
-}
+
 
 header li {
   padding:0px 20px;
@@ -87,6 +93,7 @@ a {
 .nav-ul {
   display:flex;
   justify-content:center;
+  padding:0px 20px;
 }
 
 .section-title {
@@ -100,7 +107,7 @@ a {
   }
 
 .btn-wrapper {
-  margin:50px 0px 30px 0px;
+  margin:40px 0px 30px 0px;
 }
 
 
@@ -131,26 +138,32 @@ a {
   width:30%;
   height:40%;
   padding:30px;
+  display:inline-block; 
+}
+
+.about-image {
+  display:block;
+  text-align:center;
 }
 
 .about-text {
-  float:right;
-  width:50%;
-  display:block;
+  width:40%;
+  display:inline-block; 
+  text-align: left;
   font-size:18px;
   line-height: 1.5;
-  padding:20px;
+  padding:30px;
 }
 
 .about {
   background-color:#F2F2F2;
-  height:650px;
+  height:100%;
   padding: 100px 0;
 }
 
 .heading-about {
   padding-top:30px;
-  padding-bottom:30px;
+  padding-bottom:5px;
   text-align:center;
 }
 
@@ -168,24 +181,32 @@ a {
 
 .skills {
   background-color:#A9D0F5;
-  height:600px;
   padding: 100px 0;
+  width:100%; 
 }
 
 .fa-html5 {
  font-size:8em;
+ text-align:center;
+ display:inline-block;
 }
 
 .fa-css3-alt {
   font-size:8em;
+  display:inline-block;
+  text-align:center;
  }
 
  .fa-js-square {
    font-size:8em;
+   display:inline-block;
+   text-align:center;
  }
 
  .fa-comment {
    font-size:8em;
+   display:inline-block;
+   text-align:center;
  }
 
 .skills-title {
@@ -196,10 +217,8 @@ a {
 }
 
 .skills-wrapper {
-  display:flex;
   justify-content: space-between;
   margin: 20px 0px;
-  width:100%;
 }
 
 .skills-text {
@@ -207,21 +226,27 @@ a {
   margin-top:20px;
   line-height: 1.5;
   font-size:18px;
+  width: 80%;
+  display: inline-block; 
 }
 
 .skills-icon {
   text-align: center;
-  width:20%;
+  width:25%;
+  line-height: 1.5;
+  float: left;
+display:block;
 }
 
 .contact {
-  padding: 110px 0;
+  padding: 100px 0;
   background-color:#D8D8D8;
 }
 .contact-text {
 text-align: center;
 font-weight:bold;
 font-size:18px;
+margin:0px 50px;
 }
 
 .heading-text {
@@ -249,9 +274,9 @@ font-size:18px;
   background: #FF8000;
 }
 
-.fa-envelope {
+/* .fa-envelope {
   font-size:2.5em;
- }
+ } */
 
 .fa-twitter {
   font-size:2.5em;
@@ -276,4 +301,18 @@ footer {
 
 footer p {
   color :#ffffff;
+}
+
+.clear {
+  clear:left;
+}
+
+.about-text-top {
+  border-top:dotted 2px #FF8000;
+  padding-top: 20px;
+}
+
+.about-text-under {
+  border-bottom:dotted 3px #FF8000;
+  padding-bottom: 20px;
 }
