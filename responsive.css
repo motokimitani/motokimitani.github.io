@@ -1,20 +1,10 @@
-@media screen and (max-width:639px) {
-  /*スマホ用のcssを記述*/
-  .skills-icon {
-    width:100%;
-    margin-bottom:30px;
-     padding: 0px 30px;
-     text-align:center;
-     display:block;
-  }
-
-  .skills-text {
+.skills-text {
     display:inline-block;
     width:80%;
   }
 
   .top-h1 {
-    font-size: 50px;
+    font-size: 40px;
   }
   .top-h2 {
     font-size:25px;
@@ -31,7 +21,6 @@
 
   .about-text {
     width:80%;
-    margin:0px 50px;
   }
   .about {
     padding-bottom: 200px;
