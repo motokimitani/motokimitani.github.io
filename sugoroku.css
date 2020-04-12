@@ -1,0 +1,87 @@
+.dice-icon img {
+  width:150px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.game-title h1 {
+  text-align:center;
+  margin-bottom: 30px;
+  position: fixed;
+  top: 0;
+    left: 0;
+    right: 0; 
+}
+
+.dice-wrapper {
+  display: block;
+  width: 60%;
+  float:left; 
+  height:600px;
+  position: fixed; 
+  margin-top: 80px;
+}
+
+.detame {
+  text-align:center;
+} 
+
+.dice-icon {
+  text-align:center;
+}
+
+.btn-wrapper {
+  text-align:center;
+}
+
+.btn-wrapper li {
+  padding:10px 10px;
+}
+
+.btn-wrapper ul {
+  padding:0px;
+}
+
+.button {
+	width: 150px;
+	padding: 0.8em;
+  text-align: center;
+  font-weight:bold;
+	color: #000;
+	background: #A9BCF5
+}
+
+.button:hover {
+  opacity:0.8;
+  cursor: pointer;
+}
+
+.box-wrapper {
+  display: block;
+  float: right;
+  text-align: center;
+  height: auto;
+  width: 40%;
+  margin:20px 50px;
+  margin-top: 100px;
+  padding-right: 50px;
+}
+
+.box {
+  display: inline-block;
+    width: 30%;
+   margin-bottom:15px;
+    padding: 30px 50px;
+    background-color: #BDBDBD;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
