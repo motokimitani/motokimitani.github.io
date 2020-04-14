@@ -16,9 +16,11 @@ ul, li {
   text-align:center;
   margin-bottom: 30px;
   position: fixed;
-  top: 0;
+  /* top: 0; */
     left: 0;
     right: 0; 
+    /* background-color:white;
+    z-index:10; */
 }
 
 .dice-wrapper {
@@ -42,9 +44,9 @@ ul, li {
   text-align:center;
 }
 
-.btn-wrapper li {
+/* .btn-wrapper li {
   padding:10px 10px;
-}
+} */
 
 .btn-wrapper ul {
   padding:0px;
@@ -82,6 +84,6 @@ ul, li {
     padding: 30px 50px;
     background-color: #BDBDBD;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     color: white;
 }
