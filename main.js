@@ -1,25 +1,51 @@
-var diceDeme //サイコロを振って出た目
+var diceNum; //サイコロの出目
+var count;  // サイコロ表示切替回数
+var diceImg; //サイコロの画像
+var diceSum = 0; //出目の合計
+var diceSumId = ("box" + diceSum) //出目の合計（駒の位置）
+var leftGoal = 20; //残りのマス
+var countNum = 0; //振った回数
 
 
-getdice6 = new Array(
-  "1.png",
-  "2.png",
-  "3.png",
-  "4.png",
-  "5.png",
-  "6.png");
-
-  count = 20; // 点滅させる回数
-  mSec = 50; // 点滅速度 （1秒=1000）
-  
-//サイコロを振るアニメーション
-function startDice(){
-   diceDeme = Math.floor(Math.random() * 6) + 1;
-   document.imgdice1.src = getdice6[diceDeme-1];
-  document.getElementById('diceDeme').innerHTML = (dice1 + 1);
-   count--;
-   //countが1より大きい時、mSecで"startDice"のプログラムを実行   
-   if (count >=1) {tim = setTimeout("startDice()",mSec);}
-   //countの数字が0になった時、プログラムは動作せず、count20に戻す   
-   if (count ==0) {count = 20;}
+//サイコロを振る+ランダムな数字を生成
+function start_function() {
+  diceNum = Math.floor(Math.random() * 6) + 1;
+  $(`img`).attr(`src`, `${diceNum}.png`);
+  // document.getElementById('diceDeme').innerHTML = diceDeme;
 }
+
+//サイコロを振るアニメーション
+function anime (){
+  if (count > 20) { //20回振る
+    count = 0;
+    $(`#startDice`).prop(`disabled`,false); //サイコロ振るボタンは押せる
+    return 0;
+   }
+   start_function();
+   count++;
+   setTimeout(anime,50); //50ミリ秒間隔で画像を表示切替え
+}
+
+function saikoro(){
+  count = 0;
+  $(`#startDice`).prop(`disabled`,true);
+  anime();
+}
+
+// //駒を進める
+// function forwardPiece (){
+//   leftGoal = leftGoal - diceNum;
+//   diceSum = 20 - leftGoal;
+//   //カウント項目の取得+表示
+//   if(diceSum < 20){
+//     countNum++;
+//     $(`#count-dice`).text(`${countNum}投目`);
+//     $(`#left-goal`).text(`ゴールまであと${leftGoal}マス`);
+
+// }
+// }
+
+$(function(){
+  $(`#startDice`).click(start_function); //サイコロを振るボタン
+  // $('#resetDice').click(reset_function); //はじめからボタン
+});
