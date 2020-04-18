@@ -87,3 +87,8 @@ ul, li {
     font-size: 20px;
     color: white;
 }
+
+#count-dice, #left-goal {
+  text-align: center;
+  line-height: 0.5;
+}
