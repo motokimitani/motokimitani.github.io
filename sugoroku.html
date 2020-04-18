@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>すごろくゲーム</title>
+  
   <link rel="stylesheet" href="sugoroku.css">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -19,10 +20,10 @@
 </div>
 <div class="dice-wrapper">
 <div class="detame">
-<p id="result">出た目：<span class="diceDeme"></span></p>
+<p id="result">出た目：<span class="diceDeme" id="dice-deme"></span></p>
 </div>
 <div class="dice-icon" id="saikoro">
-  <img src="1.png" name="imgdice1" alt="imgdice1">
+  <img src="1.png" alt="imgdice1">
 </div>
 <p id="count-dice">0投目</p>
 <p id="left-goal">ゴールまであと20マス</p>
@@ -34,27 +35,27 @@
 </div>
 </div>
 <div class="box-wrapper">
-<div class="box" id="b0">スタート</div>
-<div class="box" id="b1">1</div>
-<div class="box" id="b2">2</div>
-<div class="box" id="b3">3</div>
-<div class="box" id="b4">4</div>
-<div class="box" id="b5">5</div>
-<div class="box" id="b6">6</div>
-<div class="box" id="b7">7</div>
-<div class="box" id="b8">8</div>
-<div class="box" id="b9">9</div>
-<div class="box" id="b10">10</div>
-<div class="box" id="b11">11</div>
-<div class="box" id="b12">12</div>
-<div class="box" id="b13">13</div>
-<div class="box" id="b14">14</div>
-<div class="box" id="b15">15</div>
-<div class="box" id="b16">16</div>
-<div class="box" id="b17">17</div>
-<div class="box" id="b18">18</div>
-<div class="box" id="b19">19</div>
-<div class="box" id="b20">ゴール</div>
+<div class="box" id="b0">スタート<span id="m0"><i id="currentPosition" class="fas fa-biking"></i></span></div>
+<div class="box" id="b1">1<span id="m1"></span></div>
+<div class="box" id="b2">2<span id="m2"></span></div>
+<div class="box" id="b3">3<span id="m3"></span></div>
+<div class="box" id="b4">4<span id="m4"></span></div>
+<div class="box" id="b5">5<span id="m5"></span></div>
+<div class="box" id="b6">6<span id="m6"></span></div>
+<div class="box" id="b7">7<span id="m7"></span></div>
+<div class="box" id="b8">8<span id="m8"></span></div>
+<div class="box" id="b9">9<span id="m9"></span></div>
+<div class="box" id="b10">10<span id="m10"></span></div>
+<div class="box" id="b11">11<span id="m11"></span></div>
+<div class="box" id="b12">12<span id="m12"></span></div>
+<div class="box" id="b13">13<span id="m13"></span></div>
+<div class="box" id="b14">14<span id="m14"></span></div>
+<div class="box" id="b15">15<span id="m15"></span></div>
+<div class="box" id="b16">16<span id="m16"></span></div>
+<div class="box" id="b17">17<span id="m17"></span></div>
+<div class="box" id="b18">18<span id="m18"></span></div>
+<div class="box" id="b19">19<span id="m19"></span></div>
+<div class="box" id="b20">ゴール<span id="m20"></span></div>
 </div>
 </div>
 </div>
