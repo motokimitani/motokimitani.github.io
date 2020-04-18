@@ -15,21 +15,15 @@ ul, li {
 .game-title h1 {
   text-align:center;
   margin-bottom: 30px;
-  position: fixed;
-  /* top: 0; */
-    left: 0;
-    right: 0; 
-    /* background-color:white;
-    z-index:10; */
 }
 
 .dice-wrapper {
   display: block;
-  width: 60%;
+  width: 40%;
   float:left; 
   height:600px;
-  position: fixed; 
-  margin-top: 80px;
+  margin-top: 10px;
+  margin-left:50px;
 }
 
 .detame {
@@ -44,12 +38,8 @@ ul, li {
   text-align:center;
 }
 
-/* .btn-wrapper li {
-  padding:10px 10px;
-} */
-
 .btn-wrapper ul {
-  padding:0px;
+  padding:10px;
 }
 
 .button {
@@ -72,18 +62,33 @@ ul, li {
   text-align: center;
   height: auto;
   width: 40%;
-  margin:20px 50px;
-  margin-top: 100px;
+  margin-right:100px;
+  margin-top: 50px;
   padding-right: 50px;
 }
 
 .box {
   display: inline-block;
     width: 30%;
-   margin-bottom:15px;
-    padding: 30px 50px;
+   margin-bottom:10px;
+    padding: 40px 50px;
     background-color: #BDBDBD;
     text-align: center;
     font-size: 20px;
     color: white;
+    position: relative;
+}
+
+#count-dice, #left-goal {
+  text-align: center;
+  line-height: 0.5;
+}
+
+.fas{
+  color: green;
+  font-size: 70px;
+  z-index: 10;
+  position: absolute;
+  top: 18%;
+  left: 30%;
 }
