@@ -48,3 +48,4 @@ function saikoro(){
 $(function(){
   $(`#startDice`).click(start_function); //サイコロを振るボタン
   // $('#resetDice').click(reset_function); //はじめからボタン
+});
