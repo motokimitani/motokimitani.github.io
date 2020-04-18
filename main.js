@@ -32,18 +32,18 @@ function saikoro(){
   anime();
 }
 
-// //駒を進める
-// function forwardPiece (){
-//   leftGoal = leftGoal - diceNum;
-//   diceSum = 20 - leftGoal;
-//   //カウント項目の取得+表示
-//   if(diceSum < 20){
-//     countNum++;
-//     $(`#count-dice`).text(`${countNum}投目`);
-//     $(`#left-goal`).text(`ゴールまであと${leftGoal}マス`);
+//駒を進める
+function forwardPiece (){
+  leftGoal = leftGoal - diceNum;
+  diceSum = 20 - leftGoal;
+  //カウント項目の取得+表示
+  if(diceSum < 20){
+    countNum++;
+    $(`#count-dice`).text(`${countNum}投目`);
+    $(`#left-goal`).text(`ゴールまであと${leftGoal}マス`);
 
-// }
-// }
+}
+}
 
 $(function(){
   $(`#startDice`).click(start_function); //サイコロを振るボタン
