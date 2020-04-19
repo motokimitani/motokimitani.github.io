@@ -102,8 +102,3 @@ body {
   top: 18%;
   left: 30%;
 }
-
-#count-dice, #left-goal {
-  text-align: center;
-  line-height: 0.5;
-}
