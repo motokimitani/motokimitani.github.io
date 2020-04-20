@@ -46,7 +46,7 @@ function forward_function () {
 }
 }
   
-
+//サイコロをふるボタンを押した時の機能
 $(`#startDice`).click(function(){
   start_function();
   forward_function();
