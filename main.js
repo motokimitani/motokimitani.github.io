@@ -1,6 +1,3 @@
-$(function(){
-
-var start_flag = false; //初期状態
 var diceNum; //サイコロの出目
 var diceSum = 0; //出目の合計（現在のマス）
 var diceSumId = ("m" + diceSum); //出目の合計ID（現在のマスID）
@@ -9,7 +6,7 @@ var countNum = 0; //サイコロを投げた回数
 
 //サイコロを振った時の表示処理
 function start_function() {
-    $(`#resetDice`).prop(`disabled`,true);
+    $(`#resetDice`).prop(`disabled`,true); //はじめからボタンは押せない
   diceNum = Math.floor(Math.random() * 6) + 1; //1～6のランダムな出目を生成
   $(`img`).attr(`src`, `${diceNum}.png`);
   $(`#dice-deme`).text(diceNum); //出目を表示
@@ -21,35 +18,37 @@ function start_function() {
   if(leftGoal <= 0) { //ゴールした場合
   $(`#left-goal`).text("ゴールです!!"); //ゴール(残りマス0)した時の表示
   $(`#startDice`).prop(`disabled`,true); //サイコロをふるボタンは押せない
-  // forward_fuction();
   }
 }
 
 //駒を進める処理
 function forward_function () {
-   if (diceSum < 20 ) {
-  document.getElementById(diceSumId).innerHTML = "";
-  diceSumId = ("m" + diceSum);
-  document.getElementById(diceSumId).innerHTML=`<i id="currentPosition" class="fas fa-biking"></i>`;
-  //現在のマスまでスクロール処理
-  var piece = document.getElementById(`currentPosition`);
-  piece.scrollIntoView({behavior: 'smooth',inline: 'center'});
+   if (diceSum < 20 ) { //20マス未満の場合
+  document.getElementById(diceSumId).innerHTML = "";//出目の合計ID（現在のマス）を空にする
+  diceSumId = ("m" + diceSum); //出目の合計ID（現在のマス）
+  document.getElementById(diceSumId).innerHTML=`<i id="currentPosition" class="fas fa-biking"></i>`; //現在のマスにアイコンを送信
+  var element = document.getElementById(`currentPosition`); //要素(駒)の現在地を取得
+  element.scrollIntoView({behavior: 'smooth',block: 'center'});//スクロール時の要素(駒)の位置指定
 } else {
   //ゴール時の駒の処理
   document.getElementById(diceSumId).innerHTML = "";
   diceSum = 20;
-  diceSumId = ("m" + diceSum);
-  //ゴール時の駒の表示
+  diceSumId = ("m" + diceSum); 
   document.getElementById(diceSumId).innerHTML=`<i id="currentPosition" class="fas fa-child"></i>`;
   var piece = document.getElementById(`currentPosition`);
-  piece.scrollIntoView({behavior: 'smooth',inline: 'center'});
+  piece.scrollIntoView({behavior: 'smooth',block: 'center'});
+  $(`#resetDice`).prop(`disabled`,false); //ゴール時ははじめからボタンを押せる
+  $(`#startDice`).prop(`disabled`,true); //ゴール時はサイコロ振るボタンは押せない
 }
 }
-  
-//サイコロをふるボタンを押した時の機能
-$(`#startDice`).click(function(){
-  start_function();
-  forward_function();
-});
-});
 
+//はじめからボタン（リセット）でリロード
+function reset_function(){
+  window.location.reload();
+}
+
+$(function(){
+$(`#startDice`).click(start_function);
+$(`#startDice`).click(forward_function);
+$(`#resetDice`).click(reset_function);
+});
