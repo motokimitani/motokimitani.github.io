@@ -95,7 +95,11 @@ body {
 
 #count-dice, #left-goal {
   text-align: center;
-  line-height: 0.8;
+  line-height: 1.0;
+}
+
+#event-stop {
+  text-align: center;
 }
 
 .fas{
