@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>すごろくゲーム</title>
 
-    <link rel="stylesheet" href="sugoroku.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -34,9 +34,10 @@
               <li><p><input type="button" id="resetDice" class="button" value="はじめから"></p></li>
             </ul>
           </div>
+          <p id="player-turn"></p>
         </div>
         <div class="box-wrapper">
-          <div class="box" id="b0">スタート<span id="m0"><i id="currentPosition" class="fas fa-biking"></i></span></div>
+          <div class="box" id="b0">スタート<span id="m0"><i id="currentPosition2" class="fas fa-biking play2"></i><i id="currentPosition1" class="fas fa-biking play1"></i></span></div>
           <div class="box" id="b1">1<span id="m1"></span></div>
           <div class="box" id="b2">2<span id="m2"></span></div>
           <div class="box" id="b3">3<span id="m3"></span></div>
