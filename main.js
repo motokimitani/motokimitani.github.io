@@ -187,7 +187,7 @@ function player1_action(){
   forward_function1();
   } else if (dice_flag2 = true) { //プレイヤー2が動作している時
     dice_flag1 === false;//プレイヤー1は停止
-    document.getElementById(diceNum).innerHTML = "";
+    //document.getElementById(diceNum).innerHTML = "";
     document.getElementById(`player-turn`).innerHTML = "";
   } 
 }
@@ -202,7 +202,7 @@ function player2_action(){
   forward_function2();
   } else if (dice_flag1 = true) { //プレイヤー1が動作している時
     dice_flag2 === false; //プレイヤー2は停止
-    document.getElementById(diceNum).innerHTML = "";
+    //document.getElementById(diceNum).innerHTML = "";
     document.getElementById(`player-turn`).innerHTML = "";
   } 
 }
