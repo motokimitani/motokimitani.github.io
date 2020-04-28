@@ -102,13 +102,25 @@ body {
   text-align: center;
 }
 
-.fas{
-  color: green;
-  font-size: 70px;
+#player-turn {
+  text-align: center;
+  font-size:18px;
+}
+
+.fas {
+  font-size: 45px;
   z-index: 10;
   position: absolute;
-  top: 18%;
-  left: 30%;
+  top: 28%;
+  left: 40%;
+}
+
+.play1 {
+  color: green;
+}
+
+.play2{
+  color:red;
 }
 
 .events {
