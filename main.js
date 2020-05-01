@@ -201,12 +201,10 @@ $(`#left-goal`).text("ゴールまであと" + leftGoal1 + "マス");
 //プレイヤー2のターン
 function player2_action(){
   $(`#player-turn`).html("プレイヤー2の順番です").css('color','red');
-  if (playerId == 2) {
     element = document.getElementById(`currentPosition2`);
     element.scrollIntoView({behavior: 'smooth',block: 'center'});
     $(`#count-dice`).html(countNum2 + "投目");
     $(`#left-goal`).text("ゴールまであと"+leftGoal2+"マス");
-  }
 }
 
 
