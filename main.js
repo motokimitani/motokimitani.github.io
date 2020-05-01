@@ -8,7 +8,7 @@ var diceSumId1 = ("m" + diceSum1); //出目の合計ID（現在のマスID）
 var leftGoal1 = 100; //残りのマス数
 var countNum1 = 0; //サイコロを投げた回数
 var dice_flag1 = false;
-// var player = 1;
+
 
 //【プレイヤー2】
 var diceSum2 = 0; //出目の合計（現在のマス）
@@ -16,29 +16,32 @@ var diceSumId2 = ("m" + diceSum2); //出目の合計ID（現在のマスID）
 var leftGoal2 = 100; //残りのマス数
 var countNum2 = 0; //サイコロを投げた回数
 var dice_flag2 = false;
-// var player = 2;
+
 
 //サイコロを振った時の表示処理【プレイヤー1】
 function start_function1() {
-  $(`#resetDice`).prop(`disabled`,true); //はじめからボタンは押せない
-  diceNum = Math.floor(Math.random() * 6) + 1; //1～6のランダムな出目を生成
-  $(`img`).attr(`src`, `${diceNum}.png`);
-  $(`#dice-deme`).text(diceNum); //出目を表示
-  countNum1++; //サイコロを投げた回数が加算
-  $(`#count-dice`).text(countNum1 + "投目"); //サイコロを投げた回数を表示
-  leftGoal1 = leftGoal1 - diceNum;
-  diceSum1 = 100 - leftGoal1;
-  $(`#left-goal`).text("ゴールまであと"+leftGoal1+"マス"); //残りマスの表示
-  $(`#event-stop`).html(``); //イベント発生コメントは非表示
-  if(leftGoal1 <= 0) { //ゴールした場合
-  $(`#left-goal`).text("ゴールです!!"); //ゴール(残りマス0)した時の表示
-  $(`#startDice`).prop(`disabled`,true); //サイコロをふるボタンは押せない
+  dice_flag1 = true;
+    $(`#resetDice`).prop(`disabled`,true); //はじめからボタンは押せない
+    diceNum = Math.floor(Math.random() * 6) + 1; //1～6のランダムな出目を生成
+    $(`img`).attr(`src`, `${diceNum}.png`);
+    $(`#dice-deme`).text(diceNum); //出目を表示
+    countNum1++; //サイコロを投げた回数が加算
+    $(`#count-dice`).text(countNum1 + "投目"); //サイコロを投げた回数を表示
+    leftGoal1 = leftGoal1 - diceNum;
+    diceSum1 = 100 - leftGoal1;
+    $(`#left-goal`).text("ゴールまであと"+leftGoal1+"マス"); //残りマスの表示
+    $(`#event-stop`).html(``); //イベント発生コメントは非表示
+    if(leftGoal1 <= 0) { //ゴールした場合
+      dice_flag1 = false;
+    $(`#left-goal`).text("ゴールです!!"); //ゴール(残りマス0)した時の表示
+    $(`#startDice`).prop(`disabled`,true); //サイコロをふるボタンは押せない
   }
 }
 
 
 //サイコロを振った時の表示処理【プレイヤー2】
 function start_function2() {
+  dice_flag2 = true;
   $(`#resetDice`).prop(`disabled`,true); //はじめからボタンは押せない
   diceNum = Math.floor(Math.random() * 6) + 1; //1～6のランダムな出目を生成
   $(`img`).attr(`src`, `${diceNum}.png`);
@@ -50,14 +53,16 @@ function start_function2() {
   $(`#left-goal`).text("ゴールまであと"+leftGoal2+"マス"); //残りマスの表示
   $(`#event-stop`).html(``); //イベント発生コメントは非表示
   if(leftGoal2 <= 0) { //ゴールした場合
+  dice_flag2 = false;
   $(`#left-goal`).text("ゴールです!!"); //ゴール(残りマス0)した時の表示
   $(`#startDice`).prop(`disabled`,true); //サイコロをふるボタンは押せない
-  }
+}
 }
 
 //駒を進める処理【プレイヤー1】
 function forward_function1 () {
-  if (diceSum1 < 100 ) { //20マス未満の場合
+  dice_flag1 = true;
+  if (diceSum1 < 100 ) { //100マス未満の場合
   document.getElementById(diceSumId1).innerHTML = "";//出目の合計ID（現在のマス）を空にする
   diceSumId1 = ("m" + diceSum1); //出目の合計ID（現在のマス）
   document.getElementById(diceSumId1).innerHTML=`<i id="currentPosition1" class="fas fa-biking play1"></i>`; //現在のマスにアイコンを送信
@@ -67,6 +72,7 @@ function forward_function1 () {
 } else {
   //ゴール時の駒の処理
   document.getElementById(diceSumId1).innerHTML = "";
+  dice_flag1 = false;
   diceSum1 = 100;
   diceSumId1 = ("m" + diceSum1); 
   document.getElementById(diceSumId1).innerHTML=`<i id="currentPosition1" class="fas fa-child play1"></i>`;
@@ -79,6 +85,7 @@ function forward_function1 () {
 
 //駒を進める処理【プレイヤー2】
 function forward_function2 () {
+  dice_flag2 = true;
   if (diceSum2 < 100 ) { //20マス未満の場合
   document.getElementById(diceSumId2).innerHTML = "";//出目の合計ID（現在のマス）を空にする
   diceSumId2 = ("m" + diceSum2); //出目の合計ID（現在のマス）
@@ -89,6 +96,7 @@ function forward_function2 () {
 } else {
   //ゴール時の駒の処理
   document.getElementById(diceSumId2).innerHTML = "";
+  dice_flag2 = false;
   diceSum2 = 100;
   diceSumId2 = ("m" + diceSum2); 
   document.getElementById(diceSumId2).innerHTML=`<i id="currentPosition2" class="fas fa-child play2"></i>`;
@@ -103,9 +111,9 @@ function forward_function2 () {
 function select_event1(){
   if (document.getElementById(diceSumId1).classList.contains("event") == true) { //"event"クラスの存在を確認
     var eventSelect = Math.floor(Math.random()* 2) + 1; 
-  if (eventSelect === 1){ //あたりイベントの場合
+  if (eventSelect == 1){ //あたりイベントの場合
     setTimeout("forward_event1()",950); //イベント発生までの待機時間
-  } else if(eventSelect === 2) { //はずれイベントの場合
+  } else if(eventSelect == 2) { //はずれイベントの場合
     setTimeout("back_event1()",950); //イベント発生までの待機時間
   }
   }
@@ -115,9 +123,9 @@ function select_event1(){
 function select_event2(){
   if (document.getElementById(diceSumId2).classList.contains("event") == true) { //"event"クラスの存在を確認
     var eventSelect = Math.floor(Math.random()* 2) + 1; 
-  if (eventSelect === 1){ //あたりイベントの場合
+  if (eventSelect == 1){ //あたりイベントの場合
     setTimeout("forward_event2()",950); //イベント発生までの待機時間
-  } else if(eventSelect === 2) { //はずれイベントの場合
+  } else if(eventSelect == 2) { //はずれイベントの場合
     setTimeout("back_event2()",950); //イベント発生までの待機時間
   }
   }
@@ -177,35 +185,85 @@ function back_event2(){
   element.scrollIntoView({behavior: 'smooth',block: 'center'});
 }
 
+
 //プレイヤー1のターン
 function player1_action(){
-  if (dice_flag2 === false) { //プレイヤー2が停止状態の時
-  dice_flag1 = true; //プレイヤー1は動作可能
-  // element = document.getElementById(`currentPosition1`);
-  // element.scrollIntoView({behavior: 'smooth',block: 'center'});
-  $(`#player-turn`).html("プレイヤー1の順番です").css('color','green');
-  forward_function1();
-  } else if (dice_flag2 = true) { //プレイヤー2が動作している時
-    dice_flag1 === false;//プレイヤー1は停止
-    //document.getElementById(diceNum).innerHTML = "";
-    document.getElementById(`player-turn`).innerHTML = "";
-  } 
+// document.getElementById(`startDice`).onclick = "";
+element = document.getElementById(`currentPosition1`);
+element.scrollIntoView({behavior: 'smooth',block: 'center'});
+$(`#player-turn`).html("プレイヤー1の順番です").css('color','green');
+$(`#count-dice`).html(countNum1 + "投目");
+$(`#left-goal`).text("ゴールまであと" + leftGoal1 + "マス");
 }
+
+
 
 //プレイヤー2のターン
 function player2_action(){
-  if (dice_flag1 === false) { //プレイヤー1が停止状態の時
-  dice_flag2 = true; //プレイヤー2は動作可能
-  // element = document.getElementById(`currentPosition2`);
-  // element.scrollIntoView({behavior: 'smooth',block: 'center'});
   $(`#player-turn`).html("プレイヤー2の順番です").css('color','red');
-  forward_function2();
-  } else if (dice_flag1 = true) { //プレイヤー1が動作している時
-    dice_flag2 === false; //プレイヤー2は停止
-    //document.getElementById(diceNum).innerHTML = "";
-    document.getElementById(`player-turn`).innerHTML = "";
-  } 
+  if (playerId == 2) {
+    element = document.getElementById(`currentPosition2`);
+    element.scrollIntoView({behavior: 'smooth',block: 'center'});
+    $(`#count-dice`).html(countNum2 + "投目");
+    $(`#left-goal`).text("ゴールまであと"+leftGoal2+"マス");
+  }
 }
+
+
+
+
+function player_turn(){
+  if (dice_flag1 == false && dice_flag2 == false){
+    setTimeout(player1_action,2000);
+    dice_flag1 = true;
+  } else if (dice_flag1 == true && dice_flag2 == false) {
+    setTimeout(player2_action, 2000);
+    dice_flag2 = true;
+  }
+  }
+
+
+
+// //プレイヤー1のターン
+// function player1_action(){
+//   if (dice_flag2 == false) { //プレイヤー2が停止状態の時
+//   dice_flag1 = true; //プレイヤー1は動作可能
+//   //document.getElementById(diceNum).innerHTML = "";
+//   $(`#player-turn`).html("プレイヤー1の順番です").css('color','green');
+//   // document.getElementById(`player-turn`).innerHTML = "";
+//   document.getElementById(diceSumId1).innerHTML=`<i id="currentPosition1" class="fas fa-biking play1"></i>`;
+//   element = document.getElementById(`currentPosition1`);
+//   element.scrollIntoView({behavior: 'smooth',block: 'center'});
+//   // forward_function1();
+//   } else if (dice_flag2 = true) { //プレイヤー2が動作している時
+//     dice_flag1 == false;//プレイヤー1は停止
+//     $(`#player-turn`).html("プレイヤー2の順番です").css('color','red');
+//     //document.getElementById(diceNum).innerHTML = "";
+//     document.getElementById(diceSumId2).innerHTML=`<i id="currentPosition2" class="fas fa-biking play2"></i>`;
+//     element = document.getElementById(`currentPosition2`);
+//     element.scrollIntoView({behavior: 'smooth',block: 'center'});
+//     // document.getElementById(`player-turn`).innerHTML = "";
+//   } 
+// }
+
+// //プレイヤー2のターン
+// function player2_action(){
+//   if (dice_flag1 == false) { //プレイヤー1が停止状態の時
+//   dice_flag2 = true; //プレイヤー2は動作可能
+//   $(`#player-turn`).html("プレイヤー2の順番です").css('color','red');
+//   document.getElementById(diceSumId2).innerHTML=`<i id="currentPosition2" class="fas fa-biking play2"></i>`;
+//   element = document.getElementById(`currentPosition2`);
+//   element.scrollIntoView({behavior: 'smooth',block: 'center'});
+//   // forward_function2();
+//   } else if (dice_flag1 = true) { //プレイヤー1が動作している時
+//     dice_flag2 == false; //プレイヤー2は停止
+//     document.getElementById(diceSumId1).innerHTML=`<i id="currentPosition1" class="fas fa-biking play1"></i>`;
+//   element = document.getElementById(`currentPosition1`);
+//   element.scrollIntoView({behavior: 'smooth',block: 'center'});
+//     // document.getElementById(diceNum).innerHTML = "";
+//     document.getElementById(`player-turn`).innerHTML = "";
+//   } 
+// }
 
 
 //はじめからボタン（リセット）でリロード
@@ -218,12 +276,13 @@ $(function(){
     $(`#startDice`).click(forward_function1);
     $(`#startDice`).click(select_event1);
     $(`#startDice`).click(player1_action);
+
     $(`#startDice`).click(start_function2);
     $(`#startDice`).click(forward_function2);
     $(`#startDice`).click(select_event2);
     $(`#startDice`).click(player2_action);
+
     $(`#resetDice`).click(reset_function);
+    
 });
-
-
 
