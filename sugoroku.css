@@ -45,13 +45,31 @@ ul, li {
 }
 
 .button {
-	width: 150px;
+	width: 250px;
 	padding: 0.8em;
   text-align: center;
   font-weight:bold;
-	color: #000;
-	background: #A9BCF5
 }
+
+#startDice1 {
+  background: green;
+  color: #fff;
+}
+#startDice2 {
+  background: red;
+  color: #fff;
+}
+
+#startDice1:disabled { 
+  background-color: #cccccc; 
+}
+
+#startDice2:disabled { 
+  background-color: #cccccc; 
+}
+  
+
+
 /* * {
   box-sizing: border-box;
 } */
@@ -105,21 +123,29 @@ body {
 #player-turn {
   text-align: center;
   font-size:18px;
+  color:green;
 }
 
-.fas {
+
+.play1{
   font-size: 45px;
   z-index: 10;
   position: absolute;
   top: 28%;
-  left: 40%;
+  left: 55%;
+  color:green;
 }
 
-.play1 {
+/* .play1 {
   color: green;
-}
+} */
 
 .play2{
+  font-size: 45px;
+  z-index: 10;
+  position: absolute;
+  top: 28%;
+  left: 20%;
   color:red;
 }
 
