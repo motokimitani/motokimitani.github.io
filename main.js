@@ -28,6 +28,11 @@ function start_function1() {
     diceSum1 = 100 - leftGoal1;
     $(`#left-goal`).text("ゴールまであと"+leftGoal1+"マス"); //残りマスの表示
     $(`#event-stop`).html(``); //イベント発生コメントは非表示
+  //   if(leftGoal1 <= 0) { //ゴールした場合
+  //   $(`#left-goal`).text("ゴール!!プレイヤー1の勝利です!!"); //ゴール(残りマス0)した時の表示
+  //   $(`#startDice1`).prop(`disabled`,true); //サイコロをふるボタンは押せない
+  //   $(`#startDice2`).prop(`disabled`,true); //サイコロをふるボタンは押せない
+  // }
 }
 
 //サイコロを振った時の表示処理【プレイヤー2】
@@ -43,6 +48,11 @@ function start_function2() {
   diceSum2 = 100 - leftGoal2;
   $(`#left-goal`).text("ゴールまであと"+leftGoal2+"マス"); //残りマスの表示
   $(`#event-stop`).html(``); //イベント発生コメントは非表示
+  // if(leftGoal2 <= 0) { //ゴールした場合
+  // $(`#left-goal`).text("ゴール!!プレイヤー2の勝利です!!"); //ゴール(残りマス0)した時の表示
+  // $(`#startDice1`).prop(`disabled`,true); //サイコロをふるボタンは押せない
+  // $(`#startDice2`).prop(`disabled`,true); //サイコロをふるボタンは押せない
+  // }
 }
 
 //駒を進める処理【プレイヤー1】
@@ -180,6 +190,7 @@ function player2_turn(){
   element = document.getElementById(`currentPosition1`);
   element.scrollIntoView({behavior: 'smooth',block: 'center'});
   $(`#player-turn`).html("プレイヤー1の順番です").css('color','green');
+ 
 }
 
 
@@ -189,6 +200,9 @@ function player1_action(){
   document.getElementById(diceSumId1).insertAdjacentHTML=`<i id="currentPosition1" class="fas fa-biking play1"></i>`
   element = document.getElementById(`currentPosition1`);
   element.scrollIntoView({behavior: 'smooth',block: 'center'});
+  // $(`#count-dice`).html(countNum1 + "投目");
+  // $(`#left-goal`).text("ゴールまであと" + leftGoal1 + "マス");
+  // $(`#player-turn`).html("プレイヤー2の順番です").css('color','red');
   $(`#startDice1`).prop(`disabled`,true); 
   $(`#startDice2`).prop(`disabled`,false);
   var timeId = setTimeout("player1_turn()",1500);
@@ -243,5 +257,4 @@ $(function(){
     $(`#resetDice`).click(reset_function);
     
 });
-
 
