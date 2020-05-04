@@ -238,7 +238,7 @@ function player2_action() {
 
 //はじめからボタン（リセット）でリロード
 function reset_function(){
-  window.location.reload();
+  window.location.reload(true);
 }
 
 $(function(){
