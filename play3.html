@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>すごろくゲーム</title>
+
+    <link rel="stylesheet" href="sugoroku.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="threeplay.js"></script>
+  </head>
+  <body>
+    <div class="game-wrapper">
+      <div class="container">
+        <div class="game-title">
+          <h1>すごろくゲーム</h1>
+        </div>
+        <div class="dice-wrapper">
+          <div class="detame">
+            <p id="result">出た目：<span class="diceDeme" id="dice-deme"></span></p>
+          </div>
+          <div class="dice-icon" id="saikoro">
+            <img src="1.png" alt="imgdice1">
+          </div>
+          <p id="player-turn">プレイヤー1の順番です</p>
+          <p id="count-dice">0投目</p>
+          <p id="current-place">現在0マス目</p>
+          <p id="left-goal">ゴールまであと100マス</p>
+          <p id="event-stop"></p>
+          <div class="btn-wrapper">
+            <ul>
+              <li><p><input type="button" id="startDice1" class="button" value="サイコロを振る【プレイヤー1】" onclick="player1_action()"></p></li>
+              <li><p><input type="button" id="startDice2" class="button" value="サイコロを振る【プレイヤー2】" onclick="player2_action()" disabled></p></li>
+              <li><p><input type="button" id="startDice3" class="button" value="サイコロを振る【プレイヤー3】" onclick="player3_action()" disabled></p></li>
+              <li><p><input type="button" id="resetDice" class="button" value="はじめから"></p></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box" id="b0">スタート<span id="m0"><i id="currentPosition1" class="fas fa-biking play1"></i><i id="currentPosition2" class="fas fa-biking play2"></i><i id="currentPosition3" class="fas fa-biking play3"></i></span></div>
+          <div class="box" id="b1">1<span id="m1"></span></div>
+          <div class="box" id="b2">2<span id="m2"></span></div>
+          <div class="box" id="b3">3<span id="m3"></span></div>
+          <div class="box" id="b4">4<span id="m4"></span></div>
+          <div class="box events" id="b5">5<span class="event" id="m5"></span></div>
+          <div class="box" id="b6">6<span id="m6"></span></div>
+          <div class="box" id="b7">7<span id="m7"></span></div>
+          <div class="box" id="b8">8<span id="m8"></span></div>
+          <div class="box" id="b9">9<span id="m9"></span></div>
+          <div class="box events" id="b10">10<span class="event" id="m10"></span></div>
+          <div class="box" id="b11">11<span id="m11"></span></div>
+          <div class="box" id="b12">12<span id="m12"></span></div>
+          <div class="box" id="b13">13<span id="m13"></span></div>
+          <div class="box" id="b14">14<span id="m14"></span></div>
+          <div class="box events" id="b15">15<span class="event" id="m15"></span></div>
+          <div class="box" id="b16">16<span id="m16"></span></div>
+          <div class="box" id="b17">17<span id="m17"></span></div>
+          <div class="box" id="b18">18<span id="m18"></span></div>
+          <div class="box" id="b19">19<span id="m19"></span></div>
+          <div class="box events" id="b20">20<span class="event" id="m20"></span></div>
+          <div class="box" id="b21">21<span id="m21"></span></div>
+          <div class="box" id="b22">22<span id="m22"></span></div>
+          <div class="box" id="b23">23<span id="m23"></span></div>
+          <div class="box" id="b24">24<span id="m24"></span></div>
+          <div class="box events" id="b25">25<span class="event" id="m25"></span></div>
+          <div class="box" id="b26">26<span id="m26"></span></div>
+          <div class="box" id="b27">27<span id="m27"></span></div>
+          <div class="box" id="b28">28<span id="m28"></span></div>
+          <div class="box" id="b29">29<span id="m29"></span></div>
+          <div class="box events" id="b30">30<span class="event" id="m30"></span></div>
+          <div class="box" id="b31">31<span id="m31"></span></div>
+          <div class="box" id="b32">32<span id="m32"></span></div>
+          <div class="box" id="b33">33<span id="m33"></span></div>
+          <div class="box" id="b34">34<span id="m34"></span></div>
+          <div class="box events" id="b35">35<span class="event" id="m35"></span></div>
+          <div class="box" id="b36">36<span id="m36"></span></div>
+          <div class="box" id="b37">37<span id="m37"></span></div>
+          <div class="box" id="b38">38<span id="m38"></span></div>
+          <div class="box" id="b39">39<span id="m39"></span></div>
+          <div class="box events" id="b40">40<span class="event" id="m40"></span></div>
+          <div class="box" id="b41">41<span id="m41"></span></div>
+          <div class="box" id="b42">42<span id="m42"></span></div>
+          <div class="box" id="b43">43<span id="m43"></span></div>
+          <div class="box" id="b44">44<span id="m44"></span></div>
+          <div class="box events" id="b45">45<span class="event" id="m45"></span></div>
+          <div class="box" id="b46">46<span id="m46"></span></div>
+          <div class="box" id="b47">47<span id="m47"></span></div>
+          <div class="box" id="b48">48<span id="m48"></span></div>
+          <div class="box" id="b49">49<span id="m49"></span></div>
+          <div class="box events" id="b50">50<span class="event" id="m50"></span></div>
+          <div class="box" id="b51">51<span id="m51"></span></div>
+          <div class="box" id="b52">52<span id="m52"></span></div>
+          <div class="box" id="b53">53<span id="m53"></span></div>
+          <div class="box" id="b54">54<span id="m54"></span></div>
+          <div class="box events" id="b55">55<span class="event" id="m55"></span></div>
+          <div class="box" id="b56">56<span id="m56"></span></div>
+          <div class="box" id="b57">57<span id="m57"></span></div>
+          <div class="box" id="b58">58<span id="m58"></span></div>
+          <div class="box" id="b59">59<span id="m59"></span></div>
+          <div class="box events" id="b60">60<span class="event" id="m60"></span></div>
+          <div class="box" id="b61">61<span id="m61"></span></div>
+          <div class="box" id="b62">62<span id="m62"></span></div>
+          <div class="box" id="b63">63<span id="m63"></span></div>
+          <div class="box" id="b64">64<span id="m64"></span></div>
+          <div class="box events" id="b65">65<span class="event" id="m65"></span></div>
+          <div class="box" id="b66">66<span id="m66"></span></div>
+          <div class="box" id="b67">67<span id="m67"></span></div>
+          <div class="box" id="b68">68<span id="m68"></span></div>
+          <div class="box" id="b69">69<span id="m69"></span></div>
+          <div class="box events" id="b70">70<span class="event" id="m70"></span></div>
+          <div class="box" id="b71">71<span id="m71"></span></div>
+          <div class="box" id="b72">72<span id="m72"></span></div>
+          <div class="box" id="b73">73<span id="m73"></span></div>
+          <div class="box" id="b74">74<span id="m74"></span></div>
+          <div class="box events" id="b75">75<span class="event" id="m75"></span></div>
+          <div class="box" id="b76">76<span id="m76"></span></div>
+          <div class="box" id="b77">77<span id="m77"></span></div>
+          <div class="box" id="b78">78<span id="m78"></span></div>
+          <div class="box" id="b79">79<span id="m79"></span></div>
+          <div class="box events" id="b80">80<span class="event" id="m80"></span></div>
+          <div class="box" id="b81">81<span id="m81"></span></div>
+          <div class="box" id="b82">82<span id="m82"></span></div>
+          <div class="box" id="b83">83<span id="m83"></span></div>
+          <div class="box" id="b84">84<span id="m84"></span></div>
+          <div class="box events" id="b85">85<span class="event" id="m85"></span></div>
+          <div class="box" id="b86">86<span id="m86"></span></div>
+          <div class="box" id="b87">87<span id="m87"></span></div>
+          <div class="box" id="b88">88<span id="m88"></span></div>
+          <div class="box" id="b89">89<span id="m89"></span></div>
+          <div class="box events" id="b90">90<span class="event" id="m90"></span></div>
+          <div class="box" id="b91">91<span id="m91"></span></div>
+          <div class="box" id="b92">92<span id="m92"></span></div>
+          <div class="box" id="b93">93<span id="m93"></span></div>
+          <div class="box" id="b94">94<span id="m94"></span></div>
+          <div class="box events" id="b95">95<span class="event" id="m95"></span></div>
+          <div class="box" id="b96">96<span id="m96"></span></div>
+          <div class="box" id="b97">97<span id="m97"></span></div>
+          <div class="box" id="b98">98<span id="m98"></span></div>
+          <div class="box" id="b99">99<span id="m99"></span></div>
+          <div class="box" id="b100">ゴール<span id="m100"></span></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
