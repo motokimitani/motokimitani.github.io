@@ -19,6 +19,7 @@ function start_function1() {
     $(`#count-dice`).text(countNum1 + "投目"); //サイコロを投げた回数を表示
     leftGoal1 = leftGoal1 - diceNum;
     diceSum1 = 100 - leftGoal1;
+    $(`#current-place`).text("現在"+diceSum1+"マス目"); //現在マス位置の表示
     $(`#left-goal`).text("ゴールまであと"+leftGoal1+"マス"); //残りマスの表示
     $(`#event-stop`).html(``); //イベント発生コメントは非表示
       if(leftGoal1 <= 0) { //ゴールした場合
@@ -35,7 +36,6 @@ function forward_function1 () {
   document.getElementById(diceSumId1).innerHTML = "";//出目の合計ID（現在のマス）を空にする
   diceSumId1 = ("m" + diceSum1); //出目の合計ID（現在のマス）
   document.getElementById(diceSumId1).innerHTML=`<i id="currentPosition1" class="fas fa-biking play1"></i>`; //現在のマスにアイコンを送信
-  // document.getElementById(diceSumId1).insertAdjacentHTML('afterbegin','<i id="currentPosition1" class="fas fa-biking play1"></i>');
   element = document.getElementById(`currentPosition1`); //要素(駒)の現在地を取得
   element.scrollIntoView({behavior: 'smooth',block: 'center'});//スクロール時の要素(駒)の位置指定
 } else {
@@ -90,6 +90,16 @@ function back_event1(){
   element.scrollIntoView({behavior: 'smooth',block: 'center'});
 }
 
+//プレイヤー1のターン
+function player1_action(){
+  document.getElementById(`startDice1`).onclick = "";
+  element = document.getElementById(`currentPosition1`);
+  element.scrollIntoView({behavior: 'smooth',block: 'center'});
+  $(`#player-turn`).html("プレイヤー1の順番です").css('color','green');
+  $(`#count-dice`).text(countNum1 + "投目");
+  $(`#current-place`).text("現在"+diceSum1+"マス目"); 
+  $(`#left-goal`).text("ゴールまであと" + leftGoal1 + "マス");
+}
 
 
 //はじめからボタン（リセット）でリロード
@@ -101,6 +111,7 @@ $(function(){
     $(`#startDice1`).click(start_function1);
     $(`#startDice1`).click(forward_function1);
     $(`#startDice1`).click(select_event1);
+    $(`#startDice1`).click(player1_action);
 
     $(`#resetDice`).click(reset_function);
     
