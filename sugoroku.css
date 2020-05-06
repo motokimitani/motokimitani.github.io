@@ -1,5 +1,5 @@
 .dice-icon img {
-  width:150px;
+  width:100px;
 }
 
 ul, li {
@@ -23,9 +23,8 @@ ul, li {
   width: 50%;
   float:left; 
   height:600px;
-  margin-top: 10px;
   margin-left:50px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .detame {
@@ -59,6 +58,17 @@ ul, li {
   background: red;
   color: #fff;
 }
+#startDice3 {
+  background: blueviolet;
+  color: #fff;
+}
+
+#startDice4 {
+  background: blue;
+  color: #fff;
+}
+
+
 
 #startDice1:disabled { 
   background-color: #cccccc; 
@@ -67,12 +77,15 @@ ul, li {
 #startDice2:disabled { 
   background-color: #cccccc; 
 }
+
+#startDice3:disabled { 
+  background-color: #cccccc; 
+}
+
+#startDice4:disabled { 
+  background-color: #cccccc; 
+}
   
-
-
-/* * {
-  box-sizing: border-box;
-} */
 
 body {
   margin: 0;
@@ -94,26 +107,26 @@ body {
   margin-top: 30px;
   overflow-y: scroll; 
   height: 600px;
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 50px;
 }
 
 .box {
-  display: inline-block;
+   /* display: inline-block;  */
     width: 30%;
    margin-bottom:10px;
     padding: 40px 50px;
     background-color: #BDBDBD;
-    text-align: center;
+    /* text-align: center; */
     font-size: 20px;
     color: white;
     position: relative;
-    border:solid 1px #04B431;
+    border:solid 1px ;
 }
 
-#count-dice, #left-goal {
+#count-dice, #left-goal, #current-place {
   text-align: center;
-  line-height: 1.0;
+  line-height: 1.3;
 }
 
 #event-stop {
@@ -128,26 +141,25 @@ body {
 
 
 .play1{
-  font-size: 45px;
-  z-index: 10;
-  position: absolute;
-  top: 28%;
-  left: 55%;
+  font-size: 40px;
   color:green;
 }
 
-/* .play1 {
-  color: green;
-} */
-
 .play2{
-  font-size: 45px;
-  z-index: 10;
-  position: absolute;
-  top: 28%;
-  left: 20%;
+  font-size: 40px;
   color:red;
 }
+
+.play3{
+  font-size: 40px;
+  color:blueviolet;
+}
+
+.play4{
+  font-size: 40px;
+  color:blue;
+}
+
 
 .events {
 background-color:#FE9A2E;
@@ -168,22 +180,12 @@ h1 {
   justify-content: center;
 }
  
-/* #nav li {
-  width: 140px;
-  text-align: center;
-  background-color: #58ACFA;
-  float: left;
-  height: 50px;
-  line-height: 50px;
-  margin-right: 20px;
-}
- 
 #nav li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  padding: 20px;
-} */
+  padding: 35px;
+} 
 
 .top-wrapper {
   text-align: center;
@@ -197,7 +199,7 @@ h1 {
     background-color: #58ACFA;
     cursor: pointer;
     font-size: 20px;
-    margin-right: 20px;
+    margin-right: 30px;
     text-decoration: none;
     
 }
@@ -206,4 +208,8 @@ h1 {
   opacity:0.8;
   background-color: #5882FA;
   cursor: pointer;
+}
+
+.fas {
+  padding:3px;
 }
